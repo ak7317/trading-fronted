@@ -1,50 +1,34 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-
-
-const Signup = () => {
-  const [username, setUsername] = useState("");
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
+ const [error, setError] = useState("");
 
-  const handleSignup = async () => {
-     if (!email.includes("@")) {
-    setError("Invalid email format ");
-    setTimeout(() => setError(""), 3000);
-    return; //  API call rok dega
-  }
-
-  if (password.length < 5) {
-    setError("Password must be at least 5 characters");
-    setTimeout(() => setError(""), 3000);
-    return;
-  }
-
-  if (!username) {
-    setError("Username is required");
-    setTimeout(() => setError(""), 3000);
-    return;
-  }
+  const handleLogin = async () => {
     try {
-      await axios.post("http://localhost:3002/api/auth/signup", {
-        username,
+      const res = await axios.post("http://localhost:3002/api/auth/login", {
         email,
         password,
       });
 
-      setMessage("Signup successful, please login");
+      //  token + user store
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+       setMessage("Login successful ");
+      //  dashboard redirect (correct port)
       setTimeout(() => {
-      setMessage("");
-      // redirect to login
-      window.location.href = "/login";
-      }, 2000);
-    } catch (err) {
-      setError(err.response?.data?.msg || "Signup error");
-    
-    setTimeout(() => {
+    window.location.href = `http://localhost:3001?token=${res.data.token}`;
+    }, 1500);  
+  } catch (err) {
+      if (err.response?.data?.msg === "User not found") {
+        setError("User not found! Please signup.");
+      } else {
+        setError("Invalid credentials");
+      }
+       setTimeout(() => {
       setError("");
     }, 3000);
     }
@@ -52,19 +36,11 @@ const Signup = () => {
 
   return (
     <>
-      {message && <div style={styles.toastSuccess}>{message}</div>}
+    {message && <div style={styles.toastSuccess}>{message}</div>}
     {error && <div style={styles.toastError}>{error}</div>}
     <div style={styles.container}>
       <div style={styles.box}>
-        <h2>Signup</h2>
-
-        <input
-          type="text"
-          placeholder="Enter Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          style={styles.input}
-        />
+        <h2>Login</h2>
 
         <input
           type="email"
@@ -82,33 +58,19 @@ const Signup = () => {
           style={styles.input}
         />
 
-        <button onClick={handleSignup} style={styles.button}>
-          Signup
+        <button onClick={handleLogin} style={styles.button}>
+          Login
         </button>
-        <p style={{ marginTop: "15px" }}>
-        Already have an account?
-         </p>
-
-        <button 
-        onClick={() => (window.location.href = "/login")} 
-         style={styles.loginButton}
-         >
-        Login
-        </button>
-   
-
-
       </div>
     </div>
     </>
   );
 };
 
-export default Signup;
+export default Login;
 
-// 🎨 styles
+// 🎨 styles (same as before)
 const styles = {
-
   toastSuccess: {
   position: "fixed",
   bottom: "20px",
@@ -161,14 +123,4 @@ toastError: {
     borderRadius: "5px",
     cursor: "pointer",
   },
-  loginButton: {
-  width: "100%",
-  padding: "10px",
-  background: "#007bff",
-  color: "#fff",
-  border: "none",
-  borderRadius: "5px",
-  cursor: "pointer",
-  marginTop: "5px",
-},
 };
