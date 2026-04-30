@@ -29,7 +29,7 @@ const Signup = () => {
     return;
   }
     try {
-      await axios.post("http://localhost:3002/api/auth/signup", {
+      await axios.post("https://trading-backend-2d5t.onrender.com/api/auth/signup", {
         username,
         email,
         password,
