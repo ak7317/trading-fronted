@@ -8,12 +8,12 @@ function Navbar() {
 
   if (token) {
     //  login hai
-    //  window.location.href = "http://localhost:3001";
-     window.location.href = "trading-dashboard-i33145cvo-ak7317s-projects.vercel.app";
+     window.location.href = "http://localhost:3001";
+    //  window.location.href = "trading-dashboard-i33145cvo-ak7317s-projects.vercel.app";
   } else {
     //  login nhi
-    // window.location.href="http://localhost:3000/login";
-     window.location.href = "trading-fronted-coqo-dvsqb7ppt-ak7317s-projects.vercel.app/login";
+    window.location.href="http://localhost:3000/login";
+    //  window.location.href = "trading-fronted-coqo-dvsqb7ppt-ak7317s-projects.vercel.app/login";
    
   }
 };  
