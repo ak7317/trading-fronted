@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Footer() {
     return ( 
@@ -6,7 +7,7 @@ function Footer() {
         <div className='container border-top mt-5'>
             <div className='row mt-5'>
                 <div className='col'>
-                    <img src='media/images/logo.svg' style={{width: "50%"}}/>
+                    <img src='media/images/logo.svg' alt="logo" style={{width: "50%"}}/>
                     <p>
               &copy; 2010 - 2026, Not TradeNova Broking Ltd. All rights reserved.
             </p>
@@ -14,42 +15,72 @@ function Footer() {
                 <div className='col'>
                     
                       <p>Company</p>
-                          <a style={{textDecoration:"none"}} href="">About</a>
+                          <a style={{textDecoration:"none"}} href="/about">About</a>
                           <br/>
-                          <a style={{textDecoration:"none"}} href="">Products</a>
+                          <a style={{textDecoration:"none"}} href="/Products">Products</a>
                            <br/>
-                          <a style={{textDecoration:"none"}} href="">Pricing</a>
+                          <a style={{textDecoration:"none"}} href="/Pricing">Pricing</a>
                           <br/>
-                          <a  style={{textDecoration:"none"}}href="">Referral programme</a>
+                          {/* <button  style={{textDecoration:"none"}}href="">Referral programme</a> */}
+                          <button
+                           style={{ textDecoration: "none", background: "none", color:"#0D6EFD" , border: "none", cursor: "pointer", marginLeft: "-9px"  }}
+                            
+                            >
+                            Referral programme
+                          </button>
                           <br/>
-                          <a style={{textDecoration:"none"}} href="">Careers</a>
+                          {/* <a style={{textDecoration:"none"}} href="">Careers</a> */}
+                          <button
+                           style={{ textDecoration: "none", background: "none", color:"#0D6EFD" , border: "none", cursor: "pointer", marginLeft: "-9px"  }}
+                            
+                            >
+                            Careers
+                          </button>
                           <br/>
-                          <a style={{textDecoration:"none"}} href="">TradeNova.tech</a>
+                          {/* <a style={{textDecoration:"none"}} href="">TradeNova.tech</a> */}
+                          <button
+                           style={{ textDecoration: "none", background: "none", color:"#0D6EFD" , border: "none", cursor: "pointer", marginLeft: "-9px"  }}
+                            
+                            >
+                            TradeNova.tech
+                          </button>
                           <br/>
-                          <a style={{textDecoration:"none"}} href="">Press & media</a>
+                          {/* <a style={{textDecoration:"none"}} href="">Press & media</a> */}
+                          <button
+                           style={{ textDecoration: "none", background: "none", color:"#0D6EFD" , border: "none", cursor: "pointer", marginLeft: "-9px"  }}
+                            
+                            >
+                            Press & media
+                          </button>
                           <br/>
-                          <a style={{textDecoration:"none"}} href="">TradeNova cares (CSR)</a>
+                          {/* <a style={{textDecoration:"none"}} href="">TradeNova cares (CSR)</a> */}
+                          <button
+                           style={{ textDecoration: "none", background: "none", color:"#0D6EFD" , border: "none", cursor: "pointer", marginLeft: "-9px"  }}
+                            
+                            >
+                            TradeNova cares (CSR)
+                          </button>
                 </div>
                 <div className='col'>
                     <p>Support</p>
-                        <a style={{textDecoration:"none"}}  href="">Contact</a>
+                        <a style={{textDecoration:"none"}}  href="/Contact">Contact</a>
                         <br />
-                        <a style={{textDecoration:"none"}} href="">Support portal</a>
+                        <a style={{textDecoration:"none"}} href="/Support portal">Support portal</a>
                         <br />
-                         <a style={{textDecoration:"none"}} href="">Z-Connect blog</a>
+                         <a style={{textDecoration:"none"}} href="/Z-Connect blog">Z-Connect blog</a>
                         <br />
-                        <a style={{textDecoration:"none"}} href="">List of charges</a>
+                        <a style={{textDecoration:"none"}} href="/List of charges">List of charges</a>
                         <br />
-                        <a style={{textDecoration:"none"}} href="">Downloads & resources</a>
+                        <a style={{textDecoration:"none"}} href="/Downloads & resources">Downloads & resources</a>
                        <br />
                 </div>
                 <div className='col'>
                     <p>Account</p>
-                    <a style={{textDecoration:"none"}} href="">Open an account</a>
+                    <a style={{textDecoration:"none"}} href="/Signup">Open an account</a>
                     <br />
-                    <a style={{textDecoration:"none"}} href="">Fund transfer</a>
+                    <a style={{textDecoration:"none"}} href="/Fund transfer">Fund transfer</a>
                     <br />
-                    <a style={{textDecoration:"none"}} href="">60 day challenge</a>
+                    <a style={{textDecoration:"none"}} href="/60 day challenge">60 day challenge</a>
                       <br />
                 </div>
             </div>

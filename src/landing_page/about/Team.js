@@ -13,7 +13,7 @@ function Team() {
       >
         <div className="col-6 p-3 text-center">
           <img
-            src="media/images/aaman.jpeg"
+            src="media/images/aaman.jpeg" alt="image of aaman"
             style={{ borderRadius: "110%", width: "50%" }}
           />
           <h4 className="mt-5">Aaman Khan</h4>
@@ -36,14 +36,14 @@ function Team() {
 </p>
          
           <p>
-            Connect on <a href="">Homepage</a> / <a href="">TradingQnA</a> /{" "}
+            Connect on <a href="/Homepage">Homepage</a> / <a href="/TradingQnA">TradingQnA</a> /{" "}
             <a href="https://www.linkedin.com/in/aaman-khan-796204264/">Linkedin</a>
           </p>
         </div>
 
         <div className="col-6 p-3 text-center">
           <img
-            src="media/images/anmol.png"
+            src="media/images/anmol.png" alt="anmol"
             style={{ borderRadius: "110%", width: "50%" }}
           />
           <h4 className="mt-5">Anmol Mishra</h4>
@@ -66,7 +66,7 @@ function Team() {
   and collaborative teamwork.
 </p>
           <p>
-            Connect on <a href="">Homepage</a> / <a href="">TradingQnA</a> /{" "}
+            Connect on <a href="/Homepage">Homepage</a> / <a href="/Trading">TradingQnA</a> /{" "}
             <a href="https://www.linkedin.com/in/anmol-mishra-dev">Linkedin</a>
           </p>
         </div>

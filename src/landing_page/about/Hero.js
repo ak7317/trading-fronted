@@ -40,7 +40,7 @@ function Hero() {
     retail investors.
   </p>
   <p>
-    <a href="#" style={{ textDecoration: "none" }}>
+    <a href="/NovaLabs" style={{ textDecoration: "none" }}>
       NovaLabs
     </a>
     , our internal R&D initiative, continuously explores advanced 
