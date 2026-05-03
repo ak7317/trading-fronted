@@ -20,7 +20,7 @@ const Login = () => {
        setMessage("Login successful ");
       //  dashboard redirect (correct port)
       setTimeout(() => {
-    window.location.href = `http://localhost:3001?token=${res.data.token}`;
+    window.location.href = `http://localhost:3001/?token=${res.data.token}`;
     }, 1500);  
   } catch (err) {
       if (err.response?.data?.msg === "User not found") {
